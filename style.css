@@ -45,13 +45,13 @@ body {
 	transition: 0.25s;
 	color: white;
 }
-.input,.text,.modal-content{
+.input,.modal-content{
 	background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4));
 	backdrop-filter: blur(10px);
 	border-radius: 12.5px;
 }
 .modal {
-	background: linear-gradient( to right bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.25));
+	background: rgba(255, 255, 255, 0.25);
 	backdrop-filter: blur(10px);
 }
 .form-control, .alert{
@@ -72,7 +72,7 @@ body {
 		width: 100%;
 		height: 56vh;
 		border-radius: 12.5px;
-		opacity: 80%;
+		opacity: 85%;
 	}
 .menubar {
 		text-align: center;

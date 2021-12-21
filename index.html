@@ -78,7 +78,7 @@
 						  	<div class="mt-3 mb-3">
 							  <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
 							</div>
-							<button type="submit" class="tombol btn btn-ultimate btn-kirim">kirim <i class="fa fa-paper-plane"></i></button>
+							<button type="submit" class="tombol btn btn-ultimate btn-kirim" data-bs-toggle="modal" data-bs-target="#exampleModal">kirim <i class="fa fa-paper-plane"></i></button>
 							<button class="tombol btn btn-ultimate btn-loading d-none" type="button" disabled>
 								<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
 								Loading...
@@ -94,7 +94,7 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg identitas pt-3">
-					<p><strong>Cryptic Anyone</strong></p>
+					<p><strong>CryptiChat</strong></p>
 					<p>Ultimate Secreet Message</p>
 					<p>copyright© 2021 <a href="risproject.github.io" style="text-decoration:none; color:black;">Faaris Mobile</a> All Right Reserved</p>
 				</div>
@@ -102,15 +102,32 @@
 		</div>
 	</section>
 
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-code" aria-hidden="true"></i> Console</h5>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body">
+	         Kolom <strong>Response</strong> akan terupdate otomatis dengan jeda setiap <strong>5 menit</strong> untuk melindungi kerahasiaan pesan.
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
 	<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-dialog-centered">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <h5 class="modal-title" id="staticBackdropLabel">Console</h5>
+	        <h5 class="modal-title" id="staticBackdropLabel"><i class="fa fa-code" aria-hidden="true"></i> Console</h5>
 	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 	      </div>
 	      <div class="modal-body">
-	        <video src="aset/v1.mp4" type="video/mp4" width="100%" autoplay loop controls></video>
+	        <video src="aset/v1.mp4" type="video/mp4" width="100%" loop controls></video>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-primary tombol">Understod</button>
@@ -122,11 +139,11 @@
 	  <div class="modal-dialog modal-dialog-centered">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <h5 class="modal-title" id="staticBackdropLabel">Console</h5>
+	        <h5 class="modal-title" id="staticBackdropLabel"><i class="fa fa-code" aria-hidden="true"></i> Console</h5>
 	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 	      </div>
 	      <div class="modal-body">
-	        <video src="aset/v2.mp4" type="video/mp4" width="100%" autoplay loop controls></video>
+	        <video src="aset/v2.mp4" type="video/mp4" width="100%" loop controls></video>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-primary tombol">Understod</button>
@@ -142,8 +159,8 @@
 	</script>
 
 	<script>
-	  const scriptURL = 'https://script.google.com/macros/s/AKfycbxXqfCqG8GHoPLxUvbbUau9BxroJDqkHPuppHUcxhvX38UUgB0eaDTUQ3RCKEMWh-92ig/exec'
-	  const form = document.forms['cryptic']
+	  const scriptURL = 'https://script.google.com/macros/s/AKfycbwJH6p6UpF3uarpBNn5UBVIcDAQhtfHekMDNE0c_d8msjcP4yU3idpywxrR-UCbQ5x-nQ/exec';
+	  const form = document.forms['cryptic'];
 	  const btnKirim = document.querySelector('.btn-kirim');
 	  const btnLoading = document.querySelector('.btn-loading');
 	  const myAlert = document.querySelector('.my-alert');
