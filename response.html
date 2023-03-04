@@ -8,9 +8,11 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+	crossorigin="anonymous"></script>
+	<script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
 </head>
-<body style="background-image: url(https://source.unsplash.com/1600x900/?nature,mount);">
+<body>
 
 	<!-- loader -->
 	<div class="bg-loader">
@@ -50,14 +52,14 @@
 
 	<section class="identitas-panel">
 		<div class="container">
-			<div class="pt-5">
-				<iframe class="darigoogle mt-5" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRnRPmP8JLiABpk7RqIBIqwj2KtE1oNgbkU6ybMswv2oxQbSKddQeqeXybGcFsbh5Cyr31mH_Xl5QKq/pubhtml?gid=0&single=true"></iframe>
+			<div class="pt-5 my-5">
+				<div id="mainContent"></div>
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-lg-12 identitas pt-3">
-					<p><strong>CryptiChat</strong></p>
+					<p><strong>Anonimessage</strong></p>
 					<p>Ultimate Secreet Message</p>
-					<p>copyright© 2021 <a href="risproject.github.io" style="text-decoration:none; color:black;">Faaris Mobile</a> All Right Reserved</p>
+					<p>copyright© 2021 <a href="risproject.github.io" style="text-decoration:none; color:black;">RISPROJECT</a> All Right Reserved</p>
 				</div>
 			</div>
 		</div>
@@ -67,6 +69,26 @@
 			$(".bg-loader").hide();
 		})
 	</script>
+
+	<!-- Sheet Display -->
+    <script>
+        const URL = "https://docs.google.com/spreadsheets/d/1WxMsarL17QjB8x0QRFfOywNwFeRz-cXbD--J38fXXso/export?format=csv"
+        const main = document.querySelector("#mainContent");
+
+        // lakukan fetch terhadap url
+        fetch(URL).then(result=>result.text()).then(function(csvtext) {
+            return csv().fromString(csvtext);
+        }).then(function(csv) {
+            csv.forEach(function(row) {
+
+                main.innerHTML += "<h5>" + row.pesan + "</h5>";
+                main.innerHTML += "<p>" + row.timestamp + "</p>";
+
+            });
+        });
+
+    </script>
+    <!-- Akhir sheet display -->
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
